@@ -13,6 +13,7 @@ namespace ToDoListApi
             // Add services to the container.
 
             builder.Services.AddDbContext<ApplicationDbContext>(ob => ob.UseSqlServer(builder.Configuration.GetConnectionString("DbCon")));
+            builder.Services.AddScoped<ToDoItem>();
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
